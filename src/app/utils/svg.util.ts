@@ -17,5 +17,8 @@ export const loadSvgResource = (ir: MatIconRegistry, ds: DomSanitizer) => {
     21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31
   ];
 
-  days.forEach(d => ir.addSvgIcon(`day${d}`, ds.bypassSecurityTrustResourceUrl(`${dayDir}/day${d}.svg`)))
+  days.forEach(d => ir.addSvgIcon(`day${d}`, ds.bypassSecurityTrustResourceUrl(`${dayDir}/day${d}.svg`)));
+
+  const avatarDir = `${imgDir}/avatar`;
+  ir.addSvgIconSetInNamespace('avatars', ds.bypassSecurityTrustResourceUrl(`${avatarDir}/avatars.svg`));
 }
