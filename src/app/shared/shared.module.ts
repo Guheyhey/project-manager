@@ -13,6 +13,13 @@ import {
   MatGridListModule,
   MatDialogModule,
   MatAutocompleteModule,
+  MatMenuModule,
+  MatCheckboxModule,
+  MatTooltipModule,
+  MatRadioModule,
+  MatSelectModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
 } from '@angular/material';
 
 const MATERIAL_MODULES = [
@@ -27,6 +34,13 @@ const MATERIAL_MODULES = [
   MatGridListModule,
   MatDialogModule,
   MatAutocompleteModule,
+  MatMenuModule,
+  MatCheckboxModule,
+  MatTooltipModule,
+  MatRadioModule,
+  MatSelectModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
 ];
 
 @NgModule({
