@@ -5,10 +5,12 @@
     'priority-important': item.priority === 2,
     'priority-emergency': item.priority === 1
   }"
+  (click)="onItemClick()"
 >
   <mat-checkbox 
     [checked]='item.completed'
     class="status"
+    (click)="onCheckBoxClick($event)"
   ></mat-checkbox>
   <div mat-line class='content' [matTooltip]="item.desc" [ngClass]="{'completed': item.completed}">
     {{item.desc}}    

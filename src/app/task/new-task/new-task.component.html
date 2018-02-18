@@ -1,12 +1,12 @@
 <form>
-  <h3 mat-dialog-title>新建任务:</h3>
+  <h3 mat-dialog-title>{{title}}</h3>
   <div mat-dialog-content>
     <mat-input-container class="full-width">
       <input matInput type='text' placeholder="任务内容">
     </mat-input-container> 
     <mat-radio-group>
       <mat-radio-button *ngFor="let priority of priorities" [value]="priority.value">
-        {{priority.label}}
+        {{priority.label}} &nbsp;&nbsp;
       </mat-radio-button>
     </mat-radio-group>
 
