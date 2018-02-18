@@ -11,6 +11,8 @@ import { MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 })
 export class NewProjectComponent implements OnInit {
 
+  title = '';
+
   constructor( 
     @Inject(MAT_DIALOG_DATA) private data,
     private dialogRef: MatDialogRef<NewProjectComponent>,
@@ -18,8 +20,8 @@ export class NewProjectComponent implements OnInit {
    ) { }
 
   ngOnInit() {
+    this.title = this.data.title;
     console.log(JSON.stringify(this.data));
-    // this.oc.themeClass = this.data.dark ? 'myapp-dark-theme': null;
   }
 
   onClick() {
