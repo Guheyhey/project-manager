@@ -21,6 +21,7 @@ import {
   MatDatepickerModule,
   MatNativeDateModule,
 } from '@angular/material';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 
 const MATERIAL_MODULES = [
   MatToolbarModule, 
@@ -52,6 +53,7 @@ const MATERIAL_MODULES = [
     CommonModule,
     ...MATERIAL_MODULES,
   ],
-  declarations: []
+  entryComponents: [ConfirmDialogComponent],
+  declarations: [ConfirmDialogComponent]
 })
 export class SharedModule { }
