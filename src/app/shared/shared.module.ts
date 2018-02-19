@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { 
   MatToolbarModule, 
   MatIconModule, 
@@ -21,7 +20,9 @@ import {
   MatDatepickerModule,
   MatNativeDateModule,
 } from '@angular/material';
+
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { DirectiveModule } from '../directive/directive.module';
 
 const MATERIAL_MODULES = [
   MatToolbarModule, 
@@ -47,10 +48,12 @@ const MATERIAL_MODULES = [
 @NgModule({
   imports: [
     CommonModule,
+    DirectiveModule,
     ...MATERIAL_MODULES,
   ],
   exports: [
     CommonModule,
+    DirectiveModule,
     ...MATERIAL_MODULES,
   ],
   entryComponents: [ConfirmDialogComponent],
