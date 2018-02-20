@@ -13,13 +13,17 @@ import { AppRoutingModule } from '../app-routing.module';
 
 import 'hammerjs';
 import 'rxjs/add/operator/take';
+import { ServicesModule } from '../services/services.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   imports: [
     HttpModule,
+    HttpClientModule,
     SharedModule,
     AppRoutingModule,
+    ServicesModule.forRoot(),
     BrowserAnimationsModule
   ],
   declarations: [
@@ -34,7 +38,11 @@ import 'rxjs/add/operator/take';
     AppRoutingModule
   ],
   providers: [
-    { provide: 'BASE_CONFIG', useValue: 'http://localhost:3000' }
+    { 
+      provide: 'BASE_CONFIG', useValue: {
+        uri: 'http://localhost:3000'
+      }
+    }
   ]
 })
 export class CoreModule { 
