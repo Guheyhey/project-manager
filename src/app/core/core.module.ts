@@ -11,6 +11,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { loadSvgResource } from '../utils/svg.util';
 import { AppRoutingModule } from '../app-routing.module';
 
+import 'hammerjs';
+import 'rxjs/add/operator/take';
+
 
 @NgModule({
   imports: [
@@ -29,6 +32,9 @@ import { AppRoutingModule } from '../app-routing.module';
     FooterComponent, 
     SidebarComponent,
     AppRoutingModule
+  ],
+  providers: [
+    { provide: 'BASE_CONFIG', useValue: 'http://localhost:3000' }
   ]
 })
 export class CoreModule { 

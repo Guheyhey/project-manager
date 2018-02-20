@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit, HostBinding, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { NewTaskComponent } from '../new-task/new-task.component';
 import { CopyTaskComponent } from '../copy-task/copy-task.component';
@@ -12,7 +12,8 @@ import { slideToRight } from '../../anims/router.anim';
   styleUrls: ['./task-home.component.scss'],
   animations: [
     slideToRight
-  ]
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TaskHomeComponent implements OnInit {
 
@@ -21,6 +22,7 @@ export class TaskHomeComponent implements OnInit {
   lists = [
     {
       id: 1,
+      order: 1,
       name: '待办',
       tasks: [
         {
@@ -64,6 +66,7 @@ export class TaskHomeComponent implements OnInit {
     },
     {
       id: 2,
+      order: 2,
       name: '进行中',
       tasks: [
         {
@@ -106,6 +109,7 @@ export class TaskHomeComponent implements OnInit {
     },
     {
       id: 3,
+      order: 3,
       name: '已完成',
       tasks: [
         {
@@ -148,7 +152,7 @@ export class TaskHomeComponent implements OnInit {
     }
   ]
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog, private cd: ChangeDetectorRef) { }
 
   ngOnInit() {
   }
@@ -187,6 +191,27 @@ export class TaskHomeComponent implements OnInit {
   launchNewListDialog() {
     const dialogRef = this.dialog.open(NewTaskListComponent, {data: {title: '新建列表'}});
     dialogRef.afterClosed().subscribe(result => console.log(result));
+  }
+
+  handleMove(srcData, list) {
+    switch (srcData.tag) {
+      case 'task-item':
+        console.log('handling item')
+        break;
+      case 'task-list':
+        console.log('handling list')
+        const srcList = srcData.data;
+        const tempOrder = srcList.order;
+        srcList.order = list.order;
+        list.order = tempOrder;
+        break;
+      default:
+        break;
+    }
+  }
+
+  handleQuickTask(desc: string) {
+    console.log('task-home', desc)
   }
 
 }
