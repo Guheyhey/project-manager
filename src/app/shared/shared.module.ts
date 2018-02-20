@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { 
   MatToolbarModule, 
   MatIconModule, 
@@ -49,11 +50,15 @@ const MATERIAL_MODULES = [
   imports: [
     CommonModule,
     DirectiveModule,
+    FormsModule,
+    ReactiveFormsModule,
     ...MATERIAL_MODULES,
   ],
   exports: [
     CommonModule,
     DirectiveModule,
+    FormsModule,
+    ReactiveFormsModule,
     ...MATERIAL_MODULES,
   ],
   entryComponents: [ConfirmDialogComponent],
