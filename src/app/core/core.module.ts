@@ -2,6 +2,7 @@ import { NgModule, SkipSelf, Optional } from '@angular/core';
 import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { SharedModule } from '../shared/shared.module';
@@ -10,12 +11,11 @@ import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { loadSvgResource } from '../utils/svg.util';
 import { AppRoutingModule } from '../app-routing.module';
+import { ServicesModule } from '../services/services.module';
 
 import 'hammerjs';
 import 'rxjs/add/operator/take';
-import { ServicesModule } from '../services/services.module';
-import { HttpClientModule } from '@angular/common/http';
-
+import '../utils/debug.util';
 
 @NgModule({
   imports: [
