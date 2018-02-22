@@ -20,16 +20,19 @@ import {
   MatSelectModule,
   MatDatepickerModule,
   MatNativeDateModule,
+  MatButtonToggleModule,
 } from '@angular/material';
 
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { DirectiveModule } from '../directive/directive.module';
 import { ImageListSelectComponent } from './image-list-select/image-list-select.component';
+import { AgeInputComponent } from './age-input/age-input.component';
 
 const MATERIAL_MODULES = [
   MatToolbarModule, 
   MatIconModule, 
   MatButtonModule, 
+  MatButtonToggleModule,
   MatCardModule,
   MatInputModule,
   MatSidenavModule,
@@ -61,12 +64,14 @@ const MATERIAL_MODULES = [
     FormsModule,
     ReactiveFormsModule,
     ImageListSelectComponent,
+    AgeInputComponent,
     ...MATERIAL_MODULES,
   ],
   entryComponents: [ConfirmDialogComponent],
   declarations: [
     ConfirmDialogComponent, 
-    ImageListSelectComponent
+    ImageListSelectComponent, 
+    AgeInputComponent
   ]
 })
 export class SharedModule { }
